@@ -8,8 +8,14 @@ namespace Common
 {
     public class Client
     {
-        String name;
+        public struct ClientInfo
+        {
+            public static String ID = "ID";
+            public static String Name = "Name";
 
+        }
+        String name;
+        int ID;
         public string Name
         {
             get
@@ -33,6 +39,19 @@ namespace Common
             set
             {
                 Id = value;
+            }
+        }
+
+        public int ID1
+        {
+            get
+            {
+                return ID;
+            }
+
+            set
+            {
+                ID = value;
             }
         }
 

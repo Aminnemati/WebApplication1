@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace Common
 {
-    class Supervisor
+    public class Supervisor
     {
+        public struct SupervisorInfo
+        {
+            public static String S_ID = "S_ID";
+        }
+        Staff staff;
+
+        public Staff Staff
+        {
+            get
+            {
+                return staff;
+            }
+
+            set
+            {
+                staff = value;
+            }
+        }
     }
 }

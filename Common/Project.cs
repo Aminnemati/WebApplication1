@@ -21,6 +21,7 @@ namespace Common
         String Name;
         String Assignment_date;
         Client client;
+        Supervisor supervisor;
 
         public Client Client
         {
@@ -71,6 +72,19 @@ namespace Common
             set
             {
                 Assignment_date = value;
+            }
+        }
+
+        public Supervisor Supervisor
+        {
+            get
+            {
+                return supervisor;
+            }
+
+            set
+            {
+                supervisor = value;
             }
         }
     }

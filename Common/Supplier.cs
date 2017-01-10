@@ -6,39 +6,39 @@ using System.Threading.Tasks;
 
 namespace Common
 {
-    public class Phone_Numbers
+    public class Supplier
     {
-        public struct Phone_NumbersInfo
+        public struct SupplierInfo
         {
             public static String ID = "ID";
-            public static String Phone = "Phone";
+            public static String Name = "Name";
         }
-        Staff staff;
-        String Phone;
+        int ID;
+        String Name;
 
-        public Staff Staff
+        public int ID1
         {
             get
             {
-                return staff;
+                return ID;
             }
 
             set
             {
-                staff = value;
+                ID = value;
             }
         }
 
-        public string Phone1
+        public string Name1
         {
             get
             {
-                return Phone;
+                return Name;
             }
 
             set
             {
-                Phone = value;
+                Name = value;
             }
         }
     }
