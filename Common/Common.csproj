@@ -54,8 +54,9 @@
     <Compile Include="Staff.cs" />
     <Compile Include="Supervisor.cs" />
     <Compile Include="Supply.cs" />
-    <Compile Include="Suppplier.cs" />
+    <Compile Include="Supplier.cs" />
     <Compile Include="Task_Category.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Works_On.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

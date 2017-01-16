@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct Phase_TaskInfo
+    {
+        public static String ID = "ID";
+        public static String Code = "Code";
+        public static String P_ID = "P_ID";
+        public static String S_ID = "S_ID";
+        public static String Progress_Percentage = "Progress_Percentage";
+        public static String Completion_Date = "Completion_Date";
+    }
+
     public class Phase_Task
     {
-        public struct Phase_TaskInfo
-        {
-            public static String ID = "ID";
-            public static String Code = "Code";
-            public static String P_ID = "P_ID";
-            public static String S_ID = "S_ID";
-            public static String Progress_Percentage = "Progress_Percentage";
-            public static String Completion_Date = "Completion_Date";
-        }
+        
         float Progress_Percentage;
         String Completion_Date;
         Project project;
