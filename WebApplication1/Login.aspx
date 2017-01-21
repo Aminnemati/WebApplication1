@@ -2,9 +2,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-
         <meta charset="UTF-8"/>
     <!--IE Compatibility modes-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -13,8 +11,6 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Login Page</title>
     
-    <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x"/>
-    <meta name="author" content=""/>
     
     <meta name="msapplication-TileColor" content="#5bc0de" />
     <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
@@ -32,7 +28,7 @@
     <link rel="stylesheet" href="assets/lib/metismenu/metisMenu.css"/>
     
     <!-- animate.css stylesheet -->
-    <link rel="stylesheet" href="assets/lib/animate.css/animate.css"/>
+    <link rel="stylesheet" href="assets/lib/animate_css/animate.css"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -41,6 +37,7 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 
 
 </head>
@@ -97,6 +94,7 @@
   </div>
 
 
+
     <!--jQuery -->
     <script src="assets/lib/jquery/jquery.js"></script>
 
@@ -119,7 +117,6 @@
             });
         })(jQuery);
     </script>
-
 
 </body>
 </html>

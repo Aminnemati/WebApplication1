@@ -21,17 +21,17 @@ namespace WebApplication1
             Common.User u = null;
             con.Open();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.CommandText = "";
-            cmd.Parameters.Add("@UserName",user);
-            cmd.Parameters.Add("@Pass",pass);
-
+            cmd.CommandText = "SELECT_User";
+            cmd.Parameters.AddWithValue("@UserName",user);
+            cmd.Parameters.AddWithValue("@Pass",pass);
+            cmd.Connection = con;
             SqlDataReader r= cmd.ExecuteReader();
-            if (r.HasRows)
+            if (r.Read())
             {
-                new Common.User
+                u = new Common.User
                 {
-                    Code1 = r[0].ToString(),
-                    ID1 = r[1].ToString()
+                    Code1 = r.GetString(0),
+                    ID1 = r.GetString(1)
                 };
             }
             con.Close();
