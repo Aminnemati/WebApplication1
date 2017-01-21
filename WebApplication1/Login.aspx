@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-        <meta charset="UTF-8">
+        <meta charset="UTF-8"/>
     <!--IE Compatibility modes-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <!--Mobile first-->
@@ -17,22 +17,22 @@
     <meta name="author" content=""/>
     
     <meta name="msapplication-TileColor" content="#5bc0de" />
-    <meta name="msapplication-TileImage" content="~/assets/img/metis-tile.png" />
+    <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
     
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="~/assets/lib/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css"/>
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="~/assets/lib/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="assets/lib/font-awesome/css/font-awesome.css"/>
     
     <!-- Metis core stylesheet -->
-    <link rel="stylesheet" href="~/assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
     
     <!-- metisMenu stylesheet -->
-    <link rel="stylesheet" href="~/assets/lib/metismenu/metisMenu.css"/>
+    <link rel="stylesheet" href="assets/lib/metismenu/metisMenu.css"/>
     
     <!-- animate.css stylesheet -->
-    <link rel="stylesheet" href="~/assets/lib/animate.css/animate.css"/>
+    <link rel="stylesheet" href="assets/lib/animate.css/animate.css"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -49,23 +49,23 @@
     
       <div class="form-signin">
     <div class="text-center">
-        <img src="assets/img/logo.png" alt="Metis Logo">
+        <img src="assets/img/logo.png" alt="Metis Logo"/>
     </div>
-    <hr>
+    <hr/>
     <div class="tab-content">
         <div id="login" class="tab-pane active">
-            <form action="index.html">
+            <form runat="server">
                 <p class="text-muted text-center">
                     Enter your username and password
                 </p>
-                <input type="text" placeholder="Username" class="form-control top">
-                <input type="password" placeholder="Password" class="form-control bottom">
+                <asp:TextBox runat="server" ID="txtUserName" type="text" placeholder="Username" class="form-control top"/>
+                <asp:TextBox runat="server" ID="txtPassWord" type="password" placeholder="Password" class="form-control bottom"/>
                 <div class="checkbox">
 		  <label>
-		    <input type="checkbox"> Remember Me
+		    <input type="checkbox"/> Remember Me
 		  </label>
 		</div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <asp:Button runat="server" ID="btnLogin" class="btn btn-lg btn-primary btn-block" type="submit" Text="Sign in" OnClick="btnLogin_Click"/>
             </form>
         </div>
         <div id="forgot" class="tab-pane">

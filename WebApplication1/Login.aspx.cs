@@ -13,5 +13,20 @@ namespace WebApplication1
         {
 
         }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            UserConnect uc = new UserConnect();
+            Common.User user = uc.getUser(txtUserName.Text,txtPassWord.Text);
+            if(user != null)
+            {
+                Response.Redirect("Home.aspx");
+            }else
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "پیغام خطا", "اطلاعات اشتباه است", true);
+            }
+
+
+        }
     }
 }

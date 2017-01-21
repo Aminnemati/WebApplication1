@@ -13,10 +13,10 @@ namespace WebApplication1
         SqlCommand cmd;
         public UserConnect()
         {
-            con = new SqlConnection("Data Source =.; Initial Catalog = ProjectSystem; Integrated Security = True");
+            con = new SqlConnection("Data Source=.;Initial Catalog=ProjectSystem;Integrated Security=True");
             cmd = new SqlCommand();
         }
-        public Common.User getUser(string user , string pass)
+        public Common.User getUser(String user , String pass)
         {
             Common.User u = null;
             con.Open();
@@ -25,7 +25,7 @@ namespace WebApplication1
             cmd.Parameters.Add("@UserName",user);
             cmd.Parameters.Add("@Pass",pass);
 
-            SqlDataReader r= cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+            SqlDataReader r= cmd.ExecuteReader();
             if (r.HasRows)
             {
                 new Common.User
@@ -34,6 +34,7 @@ namespace WebApplication1
                     ID1 = r[1].ToString()
                 };
             }
+            con.Close();
             return u;
         }
 
