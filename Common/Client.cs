@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct ClientInfo
+    {
+        public static String ID = "ID";
+        public static String Name = "Name";
+
+    }
     public class Client
     {
-        public struct ClientInfo
-        {
-            public static String ID = "ID";
-            public static String Name = "Name";
-
-        }
         String name;
         int ID;
         public string Name

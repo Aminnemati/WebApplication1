@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct ISPInfo
+    {
+        public static String S_ID = "S_ID";
+        public static String Serial_No = "Serial_No";
+        public static String P_ID = "P_ID";
+    }
     public class ISP
     {
-        public struct ISPInfo
-        {
-            public static String S_ID = "S_ID";
-            public static String Serial_No = "Serial_No";
-            public static String P_ID = "P_ID";
-        }
         Supplier supplier;
         Item item;
         Project project;

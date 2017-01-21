@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct Phase_CategoryInfo
+    {
+        public static String Code = "ID";
+        public static String Name = "Name";
+        public static String Description = "Description";
+    }
     public class Phase_Category
     {
-        public struct Phase_CategoryInfo
-        {
-            public static String Code = "ID";
-            public static String Name = "Name";
-            public static String Description = "Description";
-        }
         int code;
         String Name, Description;
 

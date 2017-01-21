@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct StaffInfo
+    {
+        public static String ID_Num = "ID_Num";
+        public static String FName = "FName";
+        public static String LName = "LName";
+        public static String Employment_Date = "Employment_Date";
+        public static String Birth_Date = "Birth_Date";
+        public static String Address = "Adress";
+        public static String E_Mail = "E_Mail";
+        public static String Salary = "Salary";
+    }
     public class Staff
     {
-        public struct StaffInfo
-        {
-            public static String ID_Num = "ID_Num";
-            public static String FName = "FName";
-            public static String LName = "LName";
-            public static String Employment_Date = "Employment_Date";
-            public static String Birth_Date = "Birth_Date";
-            public static String Address = "Adress";
-            public static String E_Mail = "E_Mail";
-            public static String Salary = "Salary";
-        }
         int ID_Num, Salary;
         String FName, LName, Employment_Date, Birth_Date, Address, E_Mail;
 

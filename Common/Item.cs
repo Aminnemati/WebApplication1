@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct IntemInfo
+    {
+        public static String Serial_No = "Serial_No";
+        public static String Price = "Price";
+        public static String Name = "Name";
+        public static String Type = "Type";
+        public static String Model = "Model";
+    }
     public class Item
     {
-        public struct IntemInfo
-        {
-            public static String Serial_No = "Serial_No";
-            public static String Price = "Price";
-            public static String Name = "Name";
-            public static String Type = "Type";
-            public static String Model = "Model";
-        }
         float Price;
         String Serial_No;
         Item_Type item_Type;

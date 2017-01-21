@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct Task_CategoryInfo
+    {
+        public static String ID = "ID";
+        public static String Name = "Name";
+    }
     public class Task_Category
     {
-        public struct Task_CategoryInfo
-        {
-            public static String ID = "ID";
-            public static String Name = "Name";
-        }
         int ID;
         String Name;
 

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct Phone_NumbersInfo
+    {
+        public static String ID = "ID";
+        public static String Phone = "Phone";
+    }
     public class Phone_Numbers
     {
-        public struct Phone_NumbersInfo
-        {
-            public static String ID = "ID";
-            public static String Phone = "Phone";
-        }
         Staff staff;
         String Phone;
 

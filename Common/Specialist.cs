@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct SpecialistInfo
+    {
+        public static String S_ID = "S_ID";
+    }
     public class Specialist
     {
-        public struct SpecialistInfo
-        {
-            public static String S_ID = "S_ID";
-        }
         Staff staff;
-
         public Staff Staff
         {
             get

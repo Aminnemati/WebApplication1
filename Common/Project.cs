@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct ProjectInfo
+    {
+        public static String ID = "ID";
+        public static String C_ID = "C_ID";
+        public static String Name = "Name";
+        public static String S_ID = "S_ID";
+        public static String Assignment_date = "Assignment_date";
+
+    }
     public class Project
     {
-        public struct ProjectInfo
-        {
-            public static String ID = "ID";
-            public static String C_ID = "C_ID";
-            public static String Name = "Name";
-            public static String S_ID = "S_ID";
-            public static String Assignment_date = "Assignment_date";
-
-        }
         int ID;
         String Name;
         String Assignment_date;

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct Works_OnInfo
+    {
+        public static String ID_Num = "ID_Num";
+        public static String P_ID = "P_ID";
+        public static String Hours = "Hours";
+    }
     public class Works_On
     {
-        public struct Works_OnInfo
-        {
-            public static String ID_Num = "ID_Num";
-            public static String P_ID = "P_ID";
-            public static String Hours = "Hours";
-        }
         int Hours;
         Staff staff;
         Project project;

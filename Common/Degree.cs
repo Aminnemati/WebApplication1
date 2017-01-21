@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct DegreeInfo
+    {
+        public static String ID_Num = "ID_Num";
+        public static String S_Degree = "S_Degree";
+    }
     public class Degree
     {
-        public struct DegreeInfo
-        {
-            public static String ID_Num = "ID_Num";
-            public static String S_Degree = "S_Degree";
-        }
         Staff staff;
         String S_Degree;
 

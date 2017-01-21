@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct SupplyInfo
+    {
+        public static String ID = "ID";
+        public static String Price = "Price";
+        public static String Date = "Date";
+        public static String Number = "Number";
+        public static String Model = "Model";
+        public static String Name = "Name";
+        public static String Type = "Type";
+        public static String S_ID = "S_ID";
+    }
     public class Supply
     {
-        public struct SupplyInfo
-        {
-            public static String ID = "ID";
-            public static String Price = "Price";
-            public static String Date = "Date";
-            public static String Number = "Number";
-            public static String Model = "Model";
-            public static String Name = "Name";
-            public static String Type = "Type";
-            public static String S_ID = "S_ID";
-        }
         int ID,Number;
         float Price;
         String Date, Model, Name, Type;

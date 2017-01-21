@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    public struct Item_TypeInfo
+    {
+        public static String Name = "Name";
+        public static String Model = "Model";
+        public static String Type = "Type";
+        public static String Quantity = "Quantity";
+    }
     public class Item_Type
     {
-        public struct Item_TypeInfo
-        {
-            public static String Name = "Name";
-            public static String Model = "Model";
-            public static String Type = "Type";
-            public static String Quantity = "Quantity";
-        }
         int Quantity;
         String Name, Model, Type;
 
