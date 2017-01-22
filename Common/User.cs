@@ -8,27 +8,16 @@ namespace Common
 {
     public struct UserInfo
     {
-        public static String ID = "Username";
-        public static String Code = "Pass";
+        public static String Username = "Username";
+        public static String Pass = "Pass";
+        public static String ID = "ID";
     }
     public class User
     {
-        String ID, Code;
+        int ID;
+        String Username, Pass;
 
-        public string Code1
-        {
-            get
-            {
-                return Code;
-            }
-
-            set
-            {
-                Code = value;
-            }
-        }
-
-        public string ID1
+        public int ID1
         {
             get
             {
@@ -38,6 +27,32 @@ namespace Common
             set
             {
                 ID = value;
+            }
+        }
+
+        public string Pass1
+        {
+            get
+            {
+                return Pass;
+            }
+
+            set
+            {
+                Pass = value;
+            }
+        }
+
+        public string Username1
+        {
+            get
+            {
+                return Username;
+            }
+
+            set
+            {
+                Username = value;
             }
         }
     }

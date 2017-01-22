@@ -1,122 +1,170 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebApplication1.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="UI.Login" %>
 
 <!DOCTYPE html>
-
+<html lang="en">
 <head runat="server">
-        <meta charset="UTF-8"/>
-    <!--IE Compatibility modes-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <!--Mobile first-->
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Login Page</title>
-    
-    
-    <meta name="msapplication-TileColor" content="#5bc0de" />
-    <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
-    
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css"/>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/lib/font-awesome/css/font-awesome.css"/>
-    
-    <!-- Metis core stylesheet -->
-    <link rel="stylesheet" href="assets/css/main.css"/>
-    
-    <!-- metisMenu stylesheet -->
-    <link rel="stylesheet" href="assets/lib/metismenu/metisMenu.css"/>
-    
-    <!-- animate.css stylesheet -->
-    <link rel="stylesheet" href="assets/lib/animate_css/animate.css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="assets/images/admin.png" />
+    <title>Login</title>
 
+    <meta name="description" content="User login page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
+    <!-- text fonts -->
+    <link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
 
+    <!-- ace styles -->
+    <link rel="stylesheet" href="assets/css/ace.min.css" />
 
+    <!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" />
+		<![endif]-->
+    <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+
+    <!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
 </head>
-<body>
 
-    
-      <div class="form-signin">
-    <div class="text-center">
-        <img src="assets/img/logo.png" alt="Metis Logo"/>
-    </div>
-    <hr/>
-    <div class="tab-content">
-        <div id="login" class="tab-pane active">
-            <form runat="server">
-                <p class="text-muted text-center">
-                    Enter your username and password
-                </p>
-                <asp:TextBox runat="server" ID="txtUserName" type="text" placeholder="Username" class="form-control top"/>
-                <asp:TextBox runat="server" ID="txtPassWord" type="password" placeholder="Password" class="form-control bottom"/>
-                <div class="checkbox">
-		  <label>
-		    <input type="checkbox"/> Remember Me
-		  </label>
-		</div>
-                <asp:Button runat="server" ID="btnLogin" class="btn btn-lg btn-primary btn-block" type="submit" Text="Sign in" OnClick="btnLogin_Click"/>
-            </form>
+<body class="login-layout">
+    <div class="main-container">
+        <div class="main-content">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div class="login-container">
+                        <div class="center">
+                            <h1>
+                                <i class="ace-icon fa fa-code-fork white"></i>
+                                <span class="red">DB-Project</span>
+                                <span class="white" id="id-text2">Application</span>
+                            </h1>
+                        </div>
+
+                        <div class="space-6"></div>
+
+                        <div class="position-relative">
+                            <div id="login-box" class="login-box visible widget-box no-border">
+                                <div class="widget-body">
+                                    <div class="widget-main">
+                                        <h4 class="header blue lighter bigger">
+                                            <i class="ace-icon fa fa-user-secret"></i>
+                                            Enter Admin Credentials
+                                        </h4>
+
+                                        <div class="space-6"></div>
+
+                                        <form runat="server">
+                                            <fieldset>
+                                                <label class="block clearfix">
+                                                    <span class="block input-icon input-icon-right">
+                                                        <asp:TextBox runat="server" ID="txtUserName" type="text" class="form-control" placeholder="Username" />
+                                                        <i class="ace-icon fa fa-user"></i>
+                                                    </span>
+                                                </label>
+
+                                                <label class="block clearfix">
+                                                    <span class="block input-icon input-icon-right">
+                                                        <asp:TextBox runat="server" ID="txtPassWord" type="password" class="form-control" placeholder="Password" />
+                                                        <i class="ace-icon fa fa-lock"></i>
+                                                    </span>
+                                                </label>
+
+                                                <div class="space"></div>
+
+                                                <div class="clearfix">
+                                                    <asp:Button runat="server" ID="btnLogin" type="button" class="width-35 pull-right btn btn-sm btn-primary" Text="Login" OnClick="btnLogin_Click" />
+                                                </div>
+
+                                                <div class="space-4"></div>
+                                            </fieldset>
+                                        </form>
+
+                                    </div>
+                                    <!-- /.widget-main -->
+
+                                    <div class="toolbar clearfix">
+                                    </div>
+                                </div>
+                                <!-- /.widget-body -->
+                            </div>
+                        </div>
+                            <!-- /.login-box -->
+                        <!-- /.position-relative -->
+
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
         </div>
-        <div id="forgot" class="tab-pane">
-            <form action="index.html">
-                <p class="text-muted text-center">Enter your valid e-mail</p>
-                <input type="email" placeholder="mail@domain.com" class="form-control"/>
-                <br/>
-                <button class="btn btn-lg btn-danger btn-block" type="submit">Recover Password</button>
-            </form>
-        </div>
-        <div id="signup" class="tab-pane">
-            <form action="index.html">
-                <input type="text" placeholder="username" class="form-control top"/>
-                <input type="email" placeholder="mail@domain.com" class="form-control middle"/>
-                <input type="password" placeholder="password" class="form-control middle"/>
-                <input type="password" placeholder="re-password" class="form-control bottom"/>
-                <button class="btn btn-lg btn-success btn-block" type="submit">Register</button>
-            </form>
-        </div>
+        <!-- /.main-content -->
     </div>
-    <hr>
-    <div class="text-center">
-        <ul class="list-inline">
-            <li><a class="text-muted" href="#login" data-toggle="tab">Login</a></li>
-            <li><a class="text-muted" href="#forgot" data-toggle="tab">Forgot Password</a></li>
-            <li><a class="text-muted" href="#signup" data-toggle="tab">Signup</a></li>
-        </ul>
-    </div>
-  </div>
+    <!-- /.main-container -->
 
+    <!-- basic scripts -->
 
+    <!--[if !IE]> -->
+    <script src="assets/js/jquery-2.1.4.min.js"></script>
 
-    <!--jQuery -->
-    <script src="assets/lib/jquery/jquery.js"></script>
+    <!-- <![endif]-->
 
-    <!--Bootstrap -->
-    <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
-
-
+    <!--[if IE]>
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<![endif]-->
     <script type="text/javascript">
-        (function($) {
-            $(document).ready(function() {
-                $('.list-inline li > a').click(function() {
-                    var activeForm = $(this).attr('href') + ' > form';
-                    //console.log(activeForm);
-                    $(activeForm).addClass('animated fadeIn');
-                    //set timer to 1 seconds, after that, unload the animate animation
-                    setTimeout(function() {
-                        $(activeForm).removeClass('animated fadeIn');
-                    }, 1000);
-                });
-            });
-        })(jQuery);
+        if ('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
     </script>
 
+    <!-- inline scripts related to this page -->
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $(document).on('click', '.toolbar a[data-target]', function (e) {
+                e.preventDefault();
+                var target = $(this).data('target');
+                $('.widget-box.visible').removeClass('visible');//hide others
+                $(target).addClass('visible');//show target
+            });
+        });
+
+
+
+        //you don't need this, just used for changing background
+        jQuery(function ($) {
+            $('#btn-login-dark').on('click', function (e) {
+                $('body').attr('class', 'login-layout');
+                $('#id-text2').attr('class', 'white');
+                $('#id-company-text').attr('class', 'blue');
+
+                e.preventDefault();
+            });
+            $('#btn-login-light').on('click', function (e) {
+                $('body').attr('class', 'login-layout light-login');
+                $('#id-text2').attr('class', 'grey');
+                $('#id-company-text').attr('class', 'blue');
+
+                e.preventDefault();
+            });
+            $('#btn-login-blur').on('click', function (e) {
+                $('body').attr('class', 'login-layout blur-login');
+                $('#id-text2').attr('class', 'white');
+                $('#id-company-text').attr('class', 'light-blue');
+
+                e.preventDefault();
+            });
+
+        });
+    </script>
 </body>
 </html>

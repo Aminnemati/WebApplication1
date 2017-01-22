@@ -5,18 +5,19 @@ using System.Web;
 using System.Data.Sql;
 using System.Data.SqlClient;
 
-namespace WebApplication1
+namespace UI
 {
-    public class UserConnect
+    public static class UserConnect
     {
-        SqlConnection con;
-        SqlCommand cmd;
-        public UserConnect()
+        static SqlConnection con;
+        static SqlCommand cmd;
+
+        static UserConnect()
         {
             con = new SqlConnection("Data Source=.;Initial Catalog=ProjectSystem;Integrated Security=True");
             cmd = new SqlCommand();
         }
-        public Common.User getUser(String user , String pass)
+        public static Common.User getUser(String user , String pass)
         {
             Common.User u = null;
             con.Open();
@@ -30,8 +31,9 @@ namespace WebApplication1
             {
                 u = new Common.User
                 {
-                    Code1 = r.GetString(0),
-                    ID1 = r.GetString(1)
+                    Username1 = r.GetString(0),
+                    Pass1 = r.GetString(1),
+                    ID1 = r.GetInt32(2)
                 };
             }
             con.Close();

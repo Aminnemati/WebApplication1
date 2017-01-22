@@ -5,13 +5,20 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebApplication1
+namespace UI
 {
     public partial class Home : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (UserAccessDAL.CheckUserAccess( UIUtility.User.ID1, this.Page.AppRelativeVirtualPath))
+            {
 
+                lblname.Text = UIUtility.User.Username1;
+            }else
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
     }
 }

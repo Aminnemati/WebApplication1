@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebApplication1
+namespace UI
 {
     public partial class Login : System.Web.UI.Page
     {
@@ -16,17 +16,17 @@ namespace WebApplication1
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            UserConnect uc = new UserConnect();
-            Common.User user = uc.getUser(txtUserName.Text,txtPassWord.Text);
+            
+            Common.User user = UserConnect.getUser(txtUserName.Text,txtPassWord.Text);
             if(user != null)
             {
+                UIUtility.User = user;
                 Response.Redirect("Home.aspx");
             }else
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "پیغام خطا", "اطلاعات اشتباه است", true);
             }
-
-
         }
+        
     }
 }
