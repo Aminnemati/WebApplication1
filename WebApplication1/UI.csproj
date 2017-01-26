@@ -127,6 +127,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIUtility.cs" />
+    <Compile Include="UserAccessDAL.cs" />
     <Compile Include="UserConnect.cs" />
   </ItemGroup>
   <ItemGroup>
