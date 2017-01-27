@@ -11,16 +11,15 @@ namespace Common
         public static String ID_Num = "ID_Num";
         public static String FName = "FName";
         public static String LName = "LName";
-        public static String Employment_Date = "Employment_Date";
         public static String Birth_Date = "Birth_Date";
-        public static String Address = "Adress";
         public static String E_Mail = "E_Mail";
         public static String Salary = "Salary";
     }
     public class Staff
     {
         int ID_Num, Salary;
-        String FName, LName, Employment_Date, Birth_Date, Address, E_Mail;
+        DateTime Birth_Date;
+        String FName, LName, E_Mail;
 
         public int ID_Num1
         {
@@ -48,6 +47,19 @@ namespace Common
             }
         }
 
+        public DateTime Birth_Date1
+        {
+            get
+            {
+                return Birth_Date;
+            }
+
+            set
+            {
+                Birth_Date = value;
+            }
+        }
+
         public string FName1
         {
             get
@@ -71,45 +83,6 @@ namespace Common
             set
             {
                 LName = value;
-            }
-        }
-
-        public string Employment_Date1
-        {
-            get
-            {
-                return Employment_Date;
-            }
-
-            set
-            {
-                Employment_Date = value;
-            }
-        }
-
-        public string Birth_Date1
-        {
-            get
-            {
-                return Birth_Date;
-            }
-
-            set
-            {
-                Birth_Date = value;
-            }
-        }
-
-        public string Address1
-        {
-            get
-            {
-                return Address;
-            }
-
-            set
-            {
-                Address = value;
             }
         }
 

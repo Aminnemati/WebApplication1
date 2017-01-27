@@ -11,7 +11,7 @@ namespace UI
         public static Boolean CheckUserAccess(int userID,string pageName)
         {
             Boolean result=false;
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-IVHPT3F;Initial Catalog=Project;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ProjectSystem;Integrated Security=True");
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "User_Has_Access";

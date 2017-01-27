@@ -19,7 +19,7 @@ namespace Common
     {
         int ID;
         String Name;
-        String Assignment_date;
+        DateTime Assignment_date;
         Client client;
         Supervisor supervisor;
 
@@ -62,18 +62,7 @@ namespace Common
             }
         }
 
-        public string Assignment_date1
-        {
-            get
-            {
-                return Assignment_date;
-            }
-
-            set
-            {
-                Assignment_date = value;
-            }
-        }
+       
 
         public Supervisor Supervisor
         {
@@ -85,6 +74,19 @@ namespace Common
             set
             {
                 supervisor = value;
+            }
+        }
+
+        public DateTime Assignment_date1
+        {
+            get
+            {
+                return Assignment_date;
+            }
+
+            set
+            {
+                Assignment_date = value;
             }
         }
     }

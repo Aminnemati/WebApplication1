@@ -14,31 +14,45 @@ namespace Common
     }
     public class Client
     {
-        String name;
-        int ID;
-        public string Name
+        String Name,Priority,Status;
+        int ID,Budget;
+
+        public string Name1
         {
             get
             {
-                return name;
+                return Name;
             }
 
             set
             {
-                name = value;
+                Name = value;
             }
         }
 
-        public int Id1
+        public string Priority1
         {
             get
             {
-                return Id;
+                return Priority;
             }
 
             set
             {
-                Id = value;
+                Priority = value;
+            }
+        }
+
+        public string Status1
+        {
+            get
+            {
+                return Status;
+            }
+
+            set
+            {
+                Status = value;
             }
         }
 
@@ -55,6 +69,17 @@ namespace Common
             }
         }
 
-        int Id;
+        public int Budget1
+        {
+            get
+            {
+                return Budget;
+            }
+
+            set
+            {
+                Budget = value;
+            }
+        }
     }
 }
