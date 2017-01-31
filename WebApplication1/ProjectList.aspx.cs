@@ -13,7 +13,6 @@ namespace WebApplication1
         protected void searchBtnClick(object sender,EventArgs e)
         {
             ArrayList projectList = DAL.ProjectDAL.GetProjectList(txtProjectName.Text);
-            Console.WriteLine("XXXXX");
             foreach (Common.Project sample in projectList)
             {
                 

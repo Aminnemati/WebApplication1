@@ -14,7 +14,7 @@ namespace UI
 
         static UserConnect()
         {
-            con = new SqlConnection("Data Source=.;Initial Catalog=ProjectSystem;Integrated Security=True");
+            con = new SqlConnection("Data Source=DESKTOP-IVHPT3F;Initial Catalog=Project;Integrated Security=True");
             cmd = new SqlCommand();
         }
         public static Common.User getUser(String user , String pass)
@@ -31,9 +31,9 @@ namespace UI
             {
                 u = new Common.User
                 {
-                    Username1 = r.GetString(0),
-                    Pass1 = r.GetString(1),
-                    ID1 = r.GetInt32(2)
+                    Username1 = r.GetString(1),
+                    Pass1 = r.GetString(2),
+                    ID1 = r.GetInt32(0)
                 };
             }
             con.Close();

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProjectList.aspx.cs" Inherits="WebApplication1.ProjectList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Staff.aspx.cs" Inherits="WebApplication1.Staff" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -119,14 +119,14 @@
 
                     <b class="arrow"></b>
                 </li>
-                <li class="active">
-                    <a href="#" class="dropdown-toggle">
+                <li class="">
+                    <a href="ProjectList.aspx">
                         <i class="menu-icon fa fa-clipboard"></i>
-                        <span class="menu-text">Projects </span>
+                        <span class="menu-text">Project </span>
                     </a>
                 </li>
 
-                <li class="">
+                <li class="active">
                     <a href="Staff.aspx">
                         <i class="menu-icon fa fa-users"></i>
                         <span class="menu-text">Staff </span>
@@ -176,7 +176,7 @@
                             <i class="ace-icon fa fa-home home-icon"></i>
                             <a href="#">Home</a>
                         </li>
-                        <li class="active">Projects</li>
+                        <li class="active">Staff</li>
                     </ul>
                     <!-- /.breadcrumb -->
 
@@ -188,7 +188,7 @@
 
                     <!-- /.ace-settings-container -->
                     <div class="page-header">
-                        <h1>Projects
+                        <h1>Staff
                         </h1>
                     </div>
                     <!-- /.page-header -->
@@ -198,7 +198,9 @@
                             <form runat="server">
                                 <div class="row">
                                     <div class="col-sm-6 col-md-6">
-                                        <asp:TextBox runat="server" ID="txtProjectName" type="text" class="form-control" placeholder="Project Name" />
+                                        <asp:TextBox runat="server" ID="txtStaffFirstName" type="text" class="form-control" placeholder="Staff First Name" />
+                                        <div class="space-4"></div>
+                                        <asp:TextBox runat="server" ID="txtStaffLastName" type="text" class="form-control" placeholder="Staff Last Name" />
                                         <button runat="server" id="btnSearch" class="btn btn-white btn-info btn-bold" onserverclick="searchBtnClick">
 											<i class="ace-icon fa fa-search bigger-120 blue"></i>
 											Search
@@ -206,7 +208,7 @@
                                         <div class="space-4"></div>
                                     </div>
                                 </div>
-                                <button runat="server" class="btn btn-success btn-xs">
+                                <button runat="server" class="btn btn-success btn-xs" onserverclick="Insertpage">
                                     <i class="ace-icon fa fa-plus  bigger-110 icon-only"></i>
                                 </button>
                             </form>
@@ -214,10 +216,12 @@
                                 <asp:Table runat="server" ID="tableProject" class="table table-striped">
                                     <asp:TableHeaderRow>
                                         <asp:TableHeaderCell>ID</asp:TableHeaderCell>
-                                        <asp:TableHeaderCell>Name</asp:TableHeaderCell>
-                                        <asp:TableHeaderCell>Assignment Date</asp:TableHeaderCell>
-                                        <asp:TableHeaderCell>Client Name</asp:TableHeaderCell>
-                                        <asp:TableHeaderCell>Supplier Name</asp:TableHeaderCell>
+                                        <asp:TableHeaderCell>First Name</asp:TableHeaderCell>
+                                        <asp:TableHeaderCell>Last Name</asp:TableHeaderCell>
+                                        <asp:TableHeaderCell>Birth Date</asp:TableHeaderCell>
+                                        <asp:TableHeaderCell>E_Mail</asp:TableHeaderCell>
+                                        <asp:TableHeaderCell>Salary</asp:TableHeaderCell>
+                                        <asp:TableHeaderCell>Action</asp:TableHeaderCell>
                                     </asp:TableHeaderRow>
                                 </asp:Table>
                             </div>
@@ -508,4 +512,5 @@
     </script>
 </body>
 </html>
+
 

@@ -30,6 +30,7 @@ namespace WebApplication1.DAL
                     Client = ClientDAL.getRow(r.GetInt32(3)),
                     Supervisor = SupervisorDAL.GetRow(r.GetInt32(4))
                 };
+                projectArrayList.Add(project);
             }
             con.Close();
             return projectArrayList;

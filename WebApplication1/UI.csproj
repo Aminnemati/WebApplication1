@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Home.aspx" />
+    <Content Include="Insert_Staff.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -109,11 +110,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ProjectList.aspx" />
+    <Content Include="SaveSucceeded.aspx" />
+    <Content Include="Staff.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientDAL.cs" />
-    <Compile Include="ProjectDAL.cs" />
+    <Compile Include="Insert_Staff.aspx.cs">
+      <DependentUpon>Insert_Staff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Insert_Staff.aspx.designer.cs">
+      <DependentUpon>Insert_Staff.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -136,11 +144,21 @@
       <DependentUpon>ProjectList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaffDAL.cs" />
-    <Compile Include="SupervisorDAL.cs" />
+    <Compile Include="SaveSucceeded.aspx.cs">
+      <DependentUpon>SaveSucceeded.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaveSucceeded.aspx.designer.cs">
+      <DependentUpon>SaveSucceeded.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.aspx.cs">
+      <DependentUpon>Staff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff.aspx.designer.cs">
+      <DependentUpon>Staff.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UIUtility.cs" />
-    <Compile Include="UserAccessDAL.cs" />
-    <Compile Include="UserConnect.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\" />
@@ -149,6 +167,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{11d52887-11f0-42bd-9f17-dd0c79db238c}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{f648f96d-b9ef-4b7c-9973-89c0e8de2a22}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

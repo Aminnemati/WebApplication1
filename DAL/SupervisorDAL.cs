@@ -11,8 +11,8 @@ namespace WebApplication1.DAL
     {
         public static Common.Supervisor GetRow(int ID)
         {
-            Common.Supervisor s = null;
-            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ProjectSystem;Integrated Security=True");
+            Common.Supervisor s = new Common.Supervisor();
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-IVHPT3F;Initial Catalog=Project;Integrated Security=True");
             SqlCommand cmd = new SqlCommand();
             con.Open();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProjectList.aspx.cs" Inherits="WebApplication1.ProjectList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Insert_Staff.aspx.cs" Inherits="WebApplication1.Insert_Project" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -119,15 +119,15 @@
 
                     <b class="arrow"></b>
                 </li>
-                <li class="active">
+                <li class="">
                     <a href="#" class="dropdown-toggle">
                         <i class="menu-icon fa fa-clipboard"></i>
                         <span class="menu-text">Projects </span>
                     </a>
                 </li>
 
-                <li class="">
-                    <a href="Staff.aspx">
+                <li class="active">
+                    <a href="Staff.html">
                         <i class="menu-icon fa fa-users"></i>
                         <span class="menu-text">Staff </span>
                     </a>
@@ -176,7 +176,7 @@
                             <i class="ace-icon fa fa-home home-icon"></i>
                             <a href="#">Home</a>
                         </li>
-                        <li class="active">Projects</li>
+                        <li class="active">Staff</li>
                     </ul>
                     <!-- /.breadcrumb -->
 
@@ -188,38 +188,29 @@
 
                     <!-- /.ace-settings-container -->
                     <div class="page-header">
-                        <h1>Projects
+                        <h1>Staff
                         </h1>
                     </div>
                     <!-- /.page-header -->
                     <div class="row">
                         <div class="col-xs-12">
-                            <!-- PAGE CONTENT BEGINS -->
                             <form runat="server">
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-6">
-                                        <asp:TextBox runat="server" ID="txtProjectName" type="text" class="form-control" placeholder="Project Name" />
-                                        <button runat="server" id="btnSearch" class="btn btn-white btn-info btn-bold" onserverclick="searchBtnClick">
-											<i class="ace-icon fa fa-search bigger-120 blue"></i>
-											Search
-										</button>
-                                        <div class="space-4"></div>
-                                    </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <asp:TextBox runat="server" ID="txtStaffFName" type="text" class="form-control" placeholder="First Name" />
+                                    <div class="space-4"></div>
+                                    <asp:TextBox runat="server" ID="txtStaffLName" type="text" class="form-control" placeholder="Last Name" />
+                                    <div class="space-4"></div>
+                                    <asp:TextBox runat="server" ID="txtBirthDate" type="text" class="form-control" placeholder="Birth Date" />
+                                    <div class="space-4"></div>
+                                    <asp:TextBox runat="server" ID="txtEmail" type="text" class="form-control" placeholder="E_Mail" />
+                                    <div class="space-4"></div>
+                                    <asp:TextBox runat="server" ID="txtSalary" type="text" class="form-control" placeholder="Salary" />
+                                    <div class="space-4"></div>
+                                    <button runat="server" id="btnSave" class="btn btn-success" onserverclick="saveclick">Save</button>
+                                    <button runat="server" id="btnCancel" class="btn btn-danger" onserverclick="cancelclick">Cancel</button>
                                 </div>
-                                <button runat="server" class="btn btn-success btn-xs">
-                                    <i class="ace-icon fa fa-plus  bigger-110 icon-only"></i>
-                                </button>
                             </form>
                             <div class="container">
-                                <asp:Table runat="server" ID="tableProject" class="table table-striped">
-                                    <asp:TableHeaderRow>
-                                        <asp:TableHeaderCell>ID</asp:TableHeaderCell>
-                                        <asp:TableHeaderCell>Name</asp:TableHeaderCell>
-                                        <asp:TableHeaderCell>Assignment Date</asp:TableHeaderCell>
-                                        <asp:TableHeaderCell>Client Name</asp:TableHeaderCell>
-                                        <asp:TableHeaderCell>Supplier Name</asp:TableHeaderCell>
-                                    </asp:TableHeaderRow>
-                                </asp:Table>
                             </div>
                             <!-- PAGE CONTENT ENDS -->
                         </div>
@@ -508,4 +499,3 @@
     </script>
 </body>
 </html>
-

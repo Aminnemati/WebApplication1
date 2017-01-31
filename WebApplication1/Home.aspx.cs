@@ -11,10 +11,17 @@ namespace UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (UserAccessDAL.CheckUserAccess( UIUtility.User.ID1, this.Page.AppRelativeVirtualPath))
+            if(UIUtility.User != null)
             {
 
-                lblname.Text = UIUtility.User.Username1;
+                if (UserAccessDAL.CheckUserAccess(UIUtility.User.ID1, "Home"))
+                {
+                    
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                }
             }else
             {
                 Response.Redirect("Login.aspx");

@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UI {
+namespace WebApplication1 {
     
     
-    public partial class Home {
+    public partial class SaveSucceeded {
     }
 }

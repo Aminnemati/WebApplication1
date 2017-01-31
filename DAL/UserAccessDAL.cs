@@ -11,13 +11,16 @@ namespace UI
         public static Boolean CheckUserAccess(int userID,string pageName)
         {
             Boolean result=false;
-            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ProjectSystem;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-IVHPT3F;Initial Catalog=Project;Integrated Security=True");
             SqlCommand cmd = new SqlCommand();
+            con.Open();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Connection = con;
             cmd.CommandText = "User_Has_Access";
-            cmd.Parameters.AddWithValue("@Page_Name", pageName);
-            cmd.Parameters.AddWithValue("@User_ID", userID);
+            cmd.Parameters.AddWithValue("@PageName", pageName);
+            cmd.Parameters.AddWithValue("@IdUser", userID);
             result=Convert.ToBoolean (cmd.ExecuteScalar().ToString());
+            con.Close();
             return result;
         }
     }

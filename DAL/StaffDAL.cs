@@ -9,10 +9,13 @@ namespace WebApplication1.DAL
 {
     public static class StaffDAL
     {
-        public static Co GetRow(int ID)
+        
+           
+        
+        public static Common.Staff GetRow(int ID)
         {
-            Staff staff = null;
-            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ProjectSystem;Integrated Security=True");
+            Common.Staff staff = null;
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-IVHPT3F;Initial Catalog=Project;Integrated Security=True");
             SqlCommand cmd = new SqlCommand();
             con.Open();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -22,17 +25,62 @@ namespace WebApplication1.DAL
             SqlDataReader r = cmd.ExecuteReader();
             if (r.Read())
             {
-                staff = new Staff()
+                staff = new Common.Staff()
                 {
                     FName1=r.GetString(0),
-                    LName1=r.GetString(2),
-                    ID_Num1=r.GetInt32(3),
-                    Birth_Date1=r.GetDateTime(4),
-                    E_Mail1=r.GetString(5),
-                    Salary1=r.GetInt32(6)
+                    LName1=r.GetString(1),
+                    ID_Num1=r.GetInt32(2),
+                    Birth_Date1=r.GetDateTime(3),
+                    E_Mail1=r.GetString(4),
+                    Salary1=r.GetInt32(5)
                 };
             }
             return staff;
         }
+        public static ArrayList GetAllStaff()
+        {
+            ArrayList allStaff = new ArrayList();
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-IVHPT3F;Initial Catalog=Project;Integrated Security=True");
+            SqlCommand cmd = new SqlCommand();
+            con.Open();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "Select_All_Staff";
+            cmd.Connection = con;
+            SqlDataReader r = cmd.ExecuteReader();
+            while (r.Read())
+            {
+                Common.Staff staff = new Common.Staff()
+                {
+                    FName1 = r.GetString(0),
+                    LName1 = r.GetString(1),
+                    ID_Num1 = r.GetInt32(2),
+                    Birth_Date1=r.GetDateTime(3),
+                    E_Mail1=r.GetString(4),
+                    Salary1=r.GetInt32(5)
+                };
+                allStaff.Add(staff);
+            }
+            con.Close();
+            return allStaff;
+        }
+
+        public static void Insert(String Fname,String Lname,DateTime Birth_Date,String E_Mail,int Salary)
+        {
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-IVHPT3F;Initial Catalog=Project;Integrated Security=True");
+            SqlCommand cmd = new SqlCommand();
+            con.Open();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "Insert_Staff";
+            cmd.Parameters.AddWithValue("@FName", Fname);
+            cmd.Parameters.AddWithValue("@LName", Lname);
+            cmd.Parameters.AddWithValue("@Birth_Date",Birth_Date);
+            cmd.Parameters.AddWithValue("@E_Mail", E_Mail);
+            cmd.Parameters.AddWithValue("@Salary", Salary);
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+
     }
 }

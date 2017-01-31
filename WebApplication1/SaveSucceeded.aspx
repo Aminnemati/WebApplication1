@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProjectList.aspx.cs" Inherits="WebApplication1.ProjectList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SaveSucceeded.aspx.cs" Inherits="WebApplication1.SaveSucceeded" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -119,14 +119,14 @@
 
                     <b class="arrow"></b>
                 </li>
-                <li class="active">
-                    <a href="#" class="dropdown-toggle">
+                <li class="">
+                    <a href="ProjectList.aspx">
                         <i class="menu-icon fa fa-clipboard"></i>
-                        <span class="menu-text">Projects </span>
+                        <span class="menu-text">Project </span>
                     </a>
                 </li>
 
-                <li class="">
+                <li class="active">
                     <a href="Staff.aspx">
                         <i class="menu-icon fa fa-users"></i>
                         <span class="menu-text">Staff </span>
@@ -176,7 +176,7 @@
                             <i class="ace-icon fa fa-home home-icon"></i>
                             <a href="#">Home</a>
                         </li>
-                        <li class="active">Projects</li>
+                        <li class="active">Staff</li>
                     </ul>
                     <!-- /.breadcrumb -->
 
@@ -188,38 +188,15 @@
 
                     <!-- /.ace-settings-container -->
                     <div class="page-header">
-                        <h1>Projects
+                        <h1>Staff
                         </h1>
                     </div>
                     <!-- /.page-header -->
                     <div class="row">
                         <div class="col-xs-12">
                             <!-- PAGE CONTENT BEGINS -->
-                            <form runat="server">
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-6">
-                                        <asp:TextBox runat="server" ID="txtProjectName" type="text" class="form-control" placeholder="Project Name" />
-                                        <button runat="server" id="btnSearch" class="btn btn-white btn-info btn-bold" onserverclick="searchBtnClick">
-											<i class="ace-icon fa fa-search bigger-120 blue"></i>
-											Search
-										</button>
-                                        <div class="space-4"></div>
-                                    </div>
-                                </div>
-                                <button runat="server" class="btn btn-success btn-xs">
-                                    <i class="ace-icon fa fa-plus  bigger-110 icon-only"></i>
-                                </button>
-                            </form>
                             <div class="container">
-                                <asp:Table runat="server" ID="tableProject" class="table table-striped">
-                                    <asp:TableHeaderRow>
-                                        <asp:TableHeaderCell>ID</asp:TableHeaderCell>
-                                        <asp:TableHeaderCell>Name</asp:TableHeaderCell>
-                                        <asp:TableHeaderCell>Assignment Date</asp:TableHeaderCell>
-                                        <asp:TableHeaderCell>Client Name</asp:TableHeaderCell>
-                                        <asp:TableHeaderCell>Supplier Name</asp:TableHeaderCell>
-                                    </asp:TableHeaderRow>
-                                </asp:Table>
+                                Entries Saved Successfully 
                             </div>
                             <!-- PAGE CONTENT ENDS -->
                         </div>
@@ -508,4 +485,3 @@
     </script>
 </body>
 </html>
-

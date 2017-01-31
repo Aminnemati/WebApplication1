@@ -2,37 +2,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Collections;
 using System.Data.SqlClient;
 
 namespace WebApplication1.DAL
 {
-    public static class StaffDAL
+    public static class ClientDAL
     {
-        public static Common.Staff GetRow(int ID)
+        public static Common.Client getRow(int ID)
         {
-            Common.Staff staff = null;
+            Common.Client client = null;
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-IVHPT3F;Initial Catalog=Project;Integrated Security=True");
             SqlCommand cmd = new SqlCommand();
             con.Open();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.CommandText = "Select_Staff";
-            cmd.Parameters.AddWithValue("@Id", ID);
+            cmd.CommandText = "Select_Client";
+            cmd.Parameters.AddWithValue("@ID", ID);
             cmd.Connection = con;
             SqlDataReader r = cmd.ExecuteReader();
-            if (r.Read())
+            if(r.Read())
             {
-                staff = new Common.Staff()
+                client = new Common.Client()
                 {
-                    FName1=r.GetString(0),
-                    LName1=r.GetString(2),
-                    ID_Num1=r.GetInt32(3),
-                    Birth_Date1=r.GetDateTime(4),
-                    E_Mail1=r.GetString(5),
-                    Salary1=r.GetInt32(6)
+                    Name1 = r.GetString(0),
+                    ID1 = r.GetInt32(1),
+                    Budget1=r.GetInt32(2),
+                    Priority1=r.GetString(3),
+                    Status1=r.GetString(4)
                 };
             }
-            return staff;
+            return client;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace UI
                 Response.Redirect("Home.aspx");
             }else
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "پیغام خطا", "اطلاعات اشتباه است", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Error", "Username and password combination is wrong", true);
             }
         }
         
